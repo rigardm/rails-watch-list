@@ -11,7 +11,7 @@ url = 'http://tmdb.lewagon.com/movie/top_rated?api_key=<your_api_key>'
 movie_serialized = URI.open(url).read
 movie = JSON.parse(movie_serialized)
 
-movies['results'].each do |movie|
+movie['results'].each do |movie|
   Movie.create(title: movie['title'], overview: movie['overview'], poster_url: movie['poster_path'], rating: movie['vote_average'])
   puts '1 movie created....'
 end

@@ -1,15 +1,24 @@
 <div class="lists-container">
-<h1>Lists</h1>
-<p>Welcome home !</p>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://images.pexels.com/photos/109669/pexels-photo-109669.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
+    <div class="container">
+      <h1>Save any kind of movies</h1>
+      <p>All your favorites movies in one place ! 🎞 </p>
+    </div>
+  </div>
 
-<ul>
-  <% @lists.each do |list| %>
-    <%= link_to list_path(list) do %>
-    <li><%= list.name %> </li>
-    <% end %>
-  <% end %>
-</ul>
+  <div class="cards">
+    <ul>
+      <% @lists.each do |list| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/7991231/pexels-photo-7991231.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+        <%= link_to list_path(list) do %>
+        <li><%= list.name %> </li>
+        <% end %>
+      </div>
+      <% end %>
+    </ul>
+  </div>
 
-<button> <%= link_to 'Create a list', new_list_path %> </button>
+
+  <button> <%= link_to 'Create a list', new_list_path %> </button>
 
 </div>

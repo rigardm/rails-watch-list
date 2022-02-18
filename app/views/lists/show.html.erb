@@ -7,7 +7,7 @@
 
   <ul>
     <% @list.bookmarks.each do |bookmark| %>
-      <%# <img src= "#{@movie.poster_url}" alt="poster_film"> %>
+      <img src= <%= "https://image.tmdb.org/t/p/w500#{bookmark.movie.poster_url}" %> alt="poster_film">
       <li><%= bookmark.movie.title %> - <%= bookmark.movie.rating %> </li>
       <li><%= bookmark.movie.overview %> </li>
       <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure??" } %>

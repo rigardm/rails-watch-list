@@ -1,0 +1,24 @@
+.cards {
+  align-items: center;
+  margin: 15px;
+}
+
+.card-category{
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 10px;
+}
+
+.card-category a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}

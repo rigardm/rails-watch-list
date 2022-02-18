@@ -1,19 +1,16 @@
 <div class="list-container">
 
+  <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+
   <%= link_to 'Create a Bookmark', new_list_bookmark_path(@list.id) %>
-
-
   <h1><%= @list.name %></h1>
 
-  <ul>
     <% @list.bookmarks.each do |bookmark| %>
       <img src= <%= "https://image.tmdb.org/t/p/w500#{bookmark.movie.poster_url}" %> alt="poster_film">
-      <li><%= bookmark.movie.title %> - <%= bookmark.movie.rating %> </li>
-      <li><%= bookmark.movie.overview %> </li>
+      <%= bookmark.movie.title %> - <%= bookmark.movie.rating %>
+      <%= bookmark.movie.overview %>
       <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure??" } %>
     <% end %>
-  </ul>
 
-  <%= link_to 'Back to Home Page', lists_path %>
 
 </div>
